@@ -1,0 +1,22 @@
+.contactBtn {
+  background-color: var(--second-color);
+  color: var(--third-color);
+  font-size: 20px;
+  transition: transform 250ms ease, opacity 250ms ease, box-shadow 250ms ease,
+    background-color 250ms ease;
+}
+
+.contactBtn:active {
+  transform: scale(0.95);
+}
+
+.contactBtn:focus {
+  outline: 0;
+}
+
+.contactBtn:hover,
+.contactBtn:active {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  background-color: var(--second-color);
+  opacity: 0.6;
+}
