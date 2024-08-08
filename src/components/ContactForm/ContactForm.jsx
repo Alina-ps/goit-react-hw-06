@@ -45,12 +45,22 @@ const ContactForm = () => {
         <Form className={s.form}>
           <label className={s.label}>
             Name
-            <Field className={s.input} type="text" name="name" />
+            <Field
+              className={s.input}
+              type="text"
+              name="name"
+              placeholder="e.g. Peter Parker"
+            />
             <ErrorMessage name="name" component="span" className={s.error} />
           </label>
           <label className={s.label}>
             Number
-            <Field className={s.input} type="text" name="number" />
+            <Field
+              className={s.input}
+              type="text"
+              name="number"
+              placeholder="e.g. 111-11-11"
+            />
             <ErrorMessage name="number" component="span" className={s.error} />
           </label>
 
