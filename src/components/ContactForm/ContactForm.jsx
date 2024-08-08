@@ -1,25 +1,38 @@
-import { ErrorMessage, Field, Form, Formik } from "formik";
-import * as Yup from "yup";
-import { nanoid } from "nanoid";
-import s from "./ContactForm.module.css";
+import { ErrorMessage, Field, Form, Formik } from 'formik';
+import * as Yup from 'yup';
+import { nanoid } from 'nanoid';
+import s from './ContactForm.module.css';
+import { useDispatch } from 'react-redux';
+import { addContact } from '../../redux/contactsSlice';
 
-const ContactForm = ({ onAddContact }) => {
+const ContactForm = () => {
+  const dispatch = useDispatch();
+
   const initialValues = {
-    name: "",
-    number: "",
+    name: '',
+    number: '',
   };
+
   const handleSubmit = (values, actions) => {
-    onAddContact({ id: nanoid(), name: values.name, number: values.number });
+    const newContact = {
+      id: nanoid(),
+      name: values.name,
+      number: values.number,
+    };
+
+    dispatch(addContact(newContact));
+
     actions.resetForm();
   };
+
   const schema = Yup.object().shape({
     name: Yup.string()
-      .required("This field is required!")
-      .min(3, "Too short!")
-      .max(50, "Too long!"),
+      .required('This field is required!')
+      .min(3, 'Too short!')
+      .max(50, 'Too long!'),
     number: Yup.string()
-      .required("This field is required!")
-      .matches(/^\d{3}-\d{2}-\d{2}$/, "Number must be in the format 111-11-11"),
+      .required('This field is required!')
+      .matches(/^\d{3}-\d{2}-\d{2}$/, 'Number must be in the format 111-11-11'),
   });
 
   return (
