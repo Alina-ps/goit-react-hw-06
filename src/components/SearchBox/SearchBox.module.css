@@ -14,7 +14,7 @@
 .searchName {
   margin-bottom: 5px;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 15px;
 }
 
 .searchInput {
@@ -23,8 +23,8 @@
   padding: 10px;
   color: var(--first-color);
   border-radius: 8px;
-  width: 300px;
-  font-size: 20px;
+  width: 200px;
+  font-size: 15px;
   cursor: pointer;
   transition: border 250ms ease;
 }
@@ -37,4 +37,14 @@
 
 .searchInput::placeholder {
   color: var(--first-color);
+}
+
+@media screen and (min-width: 768px) {
+  .searchName {
+    font-size: 20px;
+  }
+  .searchInput {
+    width: 300px;
+    font-size: 20px;
+  }
 }

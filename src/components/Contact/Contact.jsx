@@ -8,8 +8,8 @@ const Contact = ({ id, name, number }) => {
   return (
     <>
       <div className={s.contactWrapper}>
-        <p>{name}</p>
-        <p>{number}</p>
+        <p className={s.contactText}>{name}</p>
+        <p className={s.contactText}>{number}</p>
       </div>
       <button
         className={s.contactBtn}

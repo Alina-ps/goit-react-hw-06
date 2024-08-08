@@ -14,10 +14,9 @@
 }
 
 .item {
-  padding: 20px;
-  height: 100px;
-  width: 500px;
-  font-size: 20px;
+  padding: 15px;
+  width: 250px;
+  font-size: 15px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -25,4 +24,13 @@
   border-radius: 8px;
   border: none;
   color: var(--second-color);
+}
+
+@media screen and (min-width: 768px) {
+  .item {
+    padding: 20px;
+    width: 500px;
+    font-size: 20px;
+    height: 100px;
+  }
 }
